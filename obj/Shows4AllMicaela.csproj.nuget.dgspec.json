@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Formando\\source\\repos\\Shows4AllMicaela\\Shows4AllMicaela\\Shows4AllMicaela.csproj": {}
+    "C:\\Users\\Formando\\source\\repos\\shows4all\\Shows4AllMicaela.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Formando\\source\\repos\\Shows4AllMicaela\\Shows4AllMicaela\\Shows4AllMicaela.csproj": {
+    "C:\\Users\\Formando\\source\\repos\\shows4all\\Shows4AllMicaela.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Formando\\source\\repos\\Shows4AllMicaela\\Shows4AllMicaela\\Shows4AllMicaela.csproj",
+        "projectUniqueName": "C:\\Users\\Formando\\source\\repos\\shows4all\\Shows4AllMicaela.csproj",
         "projectName": "Shows4AllMicaela",
-        "projectPath": "C:\\Users\\Formando\\source\\repos\\Shows4AllMicaela\\Shows4AllMicaela\\Shows4AllMicaela.csproj",
+        "projectPath": "C:\\Users\\Formando\\source\\repos\\shows4all\\Shows4AllMicaela.csproj",
         "packagesPath": "C:\\Users\\Formando\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Formando\\source\\repos\\Shows4AllMicaela\\Shows4AllMicaela\\obj\\",
+        "outputPath": "C:\\Users\\Formando\\source\\repos\\shows4all\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Formando\\AppData\\Roaming\\NuGet\\NuGet.Config",

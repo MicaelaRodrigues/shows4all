@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xzii/YM4SQrzYTt8rghqpuKIpxBD4VXW/+ydjnU7OXoNSVBJlNWrZKAAOFNYJQlRWUrtdjG/USLMOGdChjjWkQ==",
+  "dgSpecHash": "Q5us0hQPsaX/JXaesteA5YZn1fbpWKex0VhC7dr6njX/5RFL1zY5k+T3GUO6X5T3qNUjro1+CNT75EfGw5CDxA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Formando\\source\\repos\\Shows4AllMicaela\\Shows4AllMicaela\\Shows4AllMicaela.csproj",
+  "projectFilePath": "C:\\Users\\Formando\\source\\repos\\shows4all\\Shows4AllMicaela.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Formando\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\5.0.5\\microsoft.aspnetcore.mvc.razor.extensions.5.0.5.nupkg.sha512",
     "C:\\Users\\Formando\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\5.0.5\\microsoft.aspnetcore.mvc.razor.runtimecompilation.5.0.5.nupkg.sha512",
