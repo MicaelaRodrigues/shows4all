@@ -21,7 +21,6 @@ namespace Shows4AllMicaela.Pages.episode
 
         public IActionResult OnGet()
         {
-        ViewData["IdActor"] = new SelectList(_context.Actors, "Id", "Id");
             return Page();
         }
 

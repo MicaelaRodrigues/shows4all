@@ -12,11 +12,5 @@ namespace Shows4AllMicaela.Data
         public string Title { get; set; }
         public int NumberOfEpisode { get; set; }
 
-        public Actor Actor { get; set; }
-        [ForeignKey("Actor")]
-        public int IdActor { get; set; }
-
-
-
     }
 }

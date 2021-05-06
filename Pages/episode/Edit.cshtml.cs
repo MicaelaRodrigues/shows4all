@@ -30,14 +30,12 @@ namespace Shows4AllMicaela.Pages.episode
                 return NotFound();
             }
 
-            Episode = await _context.Episodes
-                .Include(e => e.Actor).FirstOrDefaultAsync(m => m.Id == id);
+            Episode = await _context.Episodes.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Episode == null)
             {
                 return NotFound();
             }
-           ViewData["IdActor"] = new SelectList(_context.Actors, "Id", "Id");
             return Page();
         }
 

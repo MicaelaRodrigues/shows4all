@@ -1,0 +1,67 @@
+﻿@page
+@model Shows4AllMicaela.Pages.serie.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Serie</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Serie.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Serie.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Serie.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Serie.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Serie.SerieType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Serie.SerieType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Serie.Season)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Serie.Season.Id)
+        </dd>
+        <dt class="col-sm-2">
+            Rating 
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RatingAverage)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="Rating.Stars" class="control-label"></label>
+            <input asp-for="Rating.Stars" class="form-control" />
+            <span asp-validation-for="Rating.Stars" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Rating.Description" class="control-label"></label>
+            <input asp-for="Rating.Description" class="form-control" />
+            <span asp-validation-for="Rating.Description" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        </div>
+    </form>
+
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Serie.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

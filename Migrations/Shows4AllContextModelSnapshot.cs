@@ -41,9 +41,6 @@ namespace Shows4AllMicaela.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("IdActor")
-                        .HasColumnType("int");
-
                     b.Property<int>("NumberOfEpisode")
                         .HasColumnType("int");
 
@@ -52,9 +49,29 @@ namespace Shows4AllMicaela.Migrations
 
                     b.HasKey("Id");
 
+                    b.ToTable("Episodes");
+                });
+
+            modelBuilder.Entity("Shows4AllMicaela.Data.EpisodeActor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("IdActor")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdEpisode")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
                     b.HasIndex("IdActor");
 
-                    b.ToTable("Episodes");
+                    b.HasIndex("IdEpisode");
+
+                    b.ToTable("EpisodeActors");
                 });
 
             modelBuilder.Entity("Shows4AllMicaela.Data.Rating", b =>
@@ -183,7 +200,7 @@ namespace Shows4AllMicaela.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Shows4AllMicaela.Data.Episode", b =>
+            modelBuilder.Entity("Shows4AllMicaela.Data.EpisodeActor", b =>
                 {
                     b.HasOne("Shows4AllMicaela.Data.Actor", "Actor")
                         .WithMany()
@@ -191,7 +208,15 @@ namespace Shows4AllMicaela.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Shows4AllMicaela.Data.Episode", "Episode")
+                        .WithMany()
+                        .HasForeignKey("IdEpisode")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Actor");
+
+                    b.Navigation("Episode");
                 });
 
             modelBuilder.Entity("Shows4AllMicaela.Data.Rating", b =>

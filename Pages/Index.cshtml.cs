@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using Shows4AllMicaela.Data;
@@ -39,12 +39,12 @@ namespace Shows4AllMicaela.Pages
             //{
             //    Title = "Pilot",
             //    NumberOfEpisode = 2, 
-                
 
-           
-               
+
+
+
             ////};
-           
+
 
 
             //_ctx.Actors.AddRange(ActorModel);

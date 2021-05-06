@@ -1,0 +1,54 @@
+﻿@page
+@model Shows4AllMicaela.Pages.serie.IndexModel
+
+@{
+    ViewData["Title"] = "Serie";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Serie[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Serie[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Serie[0].SerieType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Serie[0].Season)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Serie) { 
+        <tr>
+            <td>
+                <a asp-page="./Details" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Title)</a>                
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SerieType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Season.Id)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

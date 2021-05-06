@@ -23,8 +23,7 @@ namespace Shows4AllMicaela.Pages.episode
 
         public async Task OnGetAsync()
         {
-            Episode = await _context.Episodes
-                .Include(e => e.Actor).ToListAsync();
+            Episode = await _context.Episodes.ToListAsync();
         }
     }
 }

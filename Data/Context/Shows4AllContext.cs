@@ -21,7 +21,8 @@ namespace Shows4AllMicaela.Data.Context
         public DbSet<Actor> Actors { get; set; }
         public DbSet<Rental> Rentals { get; set; }
         public DbSet<Rating> Ratings { get; set; }
+        public DbSet<EpisodeActor> EpisodeActors { get; set; }
 
-       
+
     }
 }
