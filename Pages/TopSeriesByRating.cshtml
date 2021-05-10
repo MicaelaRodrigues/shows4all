@@ -1,0 +1,35 @@
+﻿@page
+@model Shows4AllMicaela.Pages.TopSeriesByRatingModel
+@{
+}
+
+<h1>Top 3 By Rating</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Title
+            </th>
+            <th>
+                Rating
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.RatingAverage)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SerieTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stars)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>

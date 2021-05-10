@@ -24,30 +24,27 @@ namespace Shows4AllMicaela.Pages
         public User UserModel { get; set; }
         public Actor ActorModel { get; set; }
         public Episode EpisodeModel { get; set; }
+        public Rental RentalModel { get; set; }
 
         public void OnGet()
         {
+
+
             //var name = Faker.Name.FullName();
             //var country = Faker.Country.Name();
+
 
             //UserModel = new User { Name = name, Country = country };
             //_ctx.Users.Add(UserModel);
 
+            //RentalModel = new Rental { Price = 10, Date = DateTime.Now, IdSerie = 3, IdUser = 3, };
+            //_ctx.Rentals.Add(RentalModel);
             //_ctx.SaveChanges();
 
-            //var episode = new Episode ()
+            //var episode = new Episde ()
             //{
             //    Title = "Pilot",
             //    NumberOfEpisode = 2, 
-
-
-
-
-            ////};
-
-
-
-            //_ctx.Actors.AddRange(ActorModel);
 
             //_ctx.SaveChanges();
         }

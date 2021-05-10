@@ -14,6 +14,17 @@ namespace Shows4AllMicaela.Data.Context
         }
 
 
+        public User LoggedUser
+        {
+            get
+            {
+                return Users.FirstOrDefault(u => u.Id == 1);
+            }
+
+            set { }
+        }
+
+
         public DbSet<User> Users { get; set; }
         public DbSet<Serie> Series { get; set; }
         public DbSet<Season> Seasons { get; set; }
@@ -22,6 +33,8 @@ namespace Shows4AllMicaela.Data.Context
         public DbSet<Rental> Rentals { get; set; }
         public DbSet<Rating> Ratings { get; set; }
         public DbSet<EpisodeActor> EpisodeActors { get; set; }
+
+
 
 
     }

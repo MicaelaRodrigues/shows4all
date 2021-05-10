@@ -35,6 +35,8 @@ namespace Shows4AllMicaela.Pages.user
                 return Page();
             }
 
+            
+
             _context.Users.Add(User);
             await _context.SaveChangesAsync();
 

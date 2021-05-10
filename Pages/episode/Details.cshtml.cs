@@ -21,6 +21,8 @@ namespace Shows4AllMicaela.Pages.episode
 
         public Episode Episode { get; set; }
 
+
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -36,5 +38,7 @@ namespace Shows4AllMicaela.Pages.episode
             }
             return Page();
         }
+
+
     }
 }

@@ -36,7 +36,7 @@
             @Html.DisplayFor(model => model.Serie.Season.Id)
         </dd>
         <dt class="col-sm-2">
-            Rating 
+            Rating
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.RatingAverage)
@@ -59,6 +59,23 @@
             <input type="submit" value="Submit" class="btn btn-primary" />
         </div>
     </form>
+    <dt class="col-sm-2">
+        Do you want to rent this serie? Please click on "RENTAL".
+    </dt>
+    <dd class="col-sm-10">
+        <form method="post">
+            <div class="form-group">
+                @*<label asp-for="Rental.Serie" class="control-label"></label>*@
+                @*<input asp-for="Rental.Serie" class="form-control" />*@
+                @*<span asp-validation-for="Rental.Serie" class="text-danger"></span>*@
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Rental" class="btn btn-primary" />
+            </div>
+        </form>
+    </dd>
+    
 
 </div>
 <div>

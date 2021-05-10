@@ -452,9 +452,12 @@ C:\Users\Formando\source\repos\shows4all\obj\Debug\net5.0\Razor\Pages\serie\Deta
 C:\Users\Formando\source\repos\shows4all\obj\Debug\net5.0\Razor\Pages\serie\Edit.cshtml.g.cs
 C:\Users\Formando\source\repos\shows4all\obj\Debug\net5.0\Razor\Pages\serie\Index.cshtml.g.cs
 C:\Users\Formando\source\repos\shows4all\obj\Debug\net5.0\Razor\Pages\serie\Evaluate.cshtml.g.cs
-C:\Users\Formando\source\repos\shows4all\obj\Debug\net5.0\Razor\Pages\SearchActor.cshtml.g.cs
 C:\Users\Formando\source\repos\shows4all\obj\Debug\net5.0\Razor\Pages\episode\Create.cshtml.g.cs
 C:\Users\Formando\source\repos\shows4all\obj\Debug\net5.0\Razor\Pages\episode\Delete.cshtml.g.cs
 C:\Users\Formando\source\repos\shows4all\obj\Debug\net5.0\Razor\Pages\episode\Details.cshtml.g.cs
 C:\Users\Formando\source\repos\shows4all\obj\Debug\net5.0\Razor\Pages\episode\Edit.cshtml.g.cs
 C:\Users\Formando\source\repos\shows4all\obj\Debug\net5.0\Razor\Pages\episode\Index.cshtml.g.cs
+C:\Users\Formando\source\repos\shows4all\obj\Debug\net5.0\Razor\Pages\SearchByActor.cshtml.g.cs
+C:\Users\Formando\source\repos\shows4all\obj\Debug\net5.0\Razor\Pages\RentedSeries.cshtml.g.cs
+C:\Users\Formando\source\repos\shows4all\obj\Debug\net5.0\Razor\Pages\SearchSeriesForRent.cshtml.g.cs
+C:\Users\Formando\source\repos\shows4all\obj\Debug\net5.0\Razor\Pages\TopSeriesByRating.cshtml.g.cs

@@ -1,0 +1,54 @@
+﻿@page
+@model Shows4AllMicaela.Pages.RentedSeriesModel
+@{
+    ViewData["Title"] = "Rented Series";
+}
+
+
+<h1>RentedSeries</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Title
+            </th>
+            <th>
+                Date
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.RentedSeries[0].SerieType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentedSeries[0].Season)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rentals[0].Date)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.RentedSeries)
+        {
+        <tr>
+            <td>
+                <a asp-page="./Details" asp-route-id="@item.SerieTitle">@Html.DisplayFor(modelItem => item.SerieTitle)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.SerieType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Season.Id)
+            </td>*@
+        </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.RentedSeries">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

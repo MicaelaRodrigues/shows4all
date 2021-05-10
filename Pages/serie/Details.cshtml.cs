@@ -26,6 +26,8 @@ namespace Shows4AllMicaela.Pages.serie
         public Rating Rating { get; set; }
         public User User { get; set; }
 
+        [BindProperty]
+        public Rental Rental { get; set; }
         public double RatingAverage { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
@@ -66,12 +68,18 @@ namespace Shows4AllMicaela.Pages.serie
             Rating.IdSerie = Serie.Id;
             Rating.IdUser = 1;
 
-            //Console.WriteLine(Rating.ToString());
-           
-            _context.Ratings.Add(Rating);
-            await _context.SaveChangesAsync();
+            Serie = await _context.Series
+                .FirstOrDefaultAsync(m => m.Id == Serie.Id);
 
-           
+            Rental = new Rental { 
+                Price = Serie.Price,
+                Date = DateTime.Now,
+                IdSerie = Serie.Id,
+                IdUser = 1
+            };
+
+            _context.Rentals.Add(Rental);
+            await _context.SaveChangesAsync();
 
 
             return RedirectToPage("./Index");

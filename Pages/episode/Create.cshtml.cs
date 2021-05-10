@@ -21,12 +21,22 @@ namespace Shows4AllMicaela.Pages.episode
 
         public IActionResult OnGet()
         {
+            //lista de atires
+
             return Page();
         }
 
         [BindProperty]
         public Episode Episode { get; set; }
 
+        [BindProperty]
+        public EpisodeActor EpisodeActor { get; set; }
+
+        [BindProperty]
+        public Actor Actor { get; set; }
+
+        [BindProperty]
+        public int IdActor { get; set; }
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
@@ -34,9 +44,17 @@ namespace Shows4AllMicaela.Pages.episode
             {
                 return Page();
             }
+           
+            //_context.Episodes.Add(Episode);
+            //await _context.SaveChangesAsync();
 
-            _context.Episodes.Add(Episode);
+            // Assim nao duplica a gravaçºao do episódio
+            EpisodeActor.Episode = Episode;
+            EpisodeActor.IdEpisode = Episode.Id;
+            _context.EpisodeActors.Add(EpisodeActor);
             await _context.SaveChangesAsync();
+
+
 
             return RedirectToPage("./Index");
         }

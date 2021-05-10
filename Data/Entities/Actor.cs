@@ -9,5 +9,6 @@ namespace Shows4AllMicaela.Data
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
     }
 }
