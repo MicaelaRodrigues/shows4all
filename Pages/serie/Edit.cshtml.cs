@@ -13,9 +13,9 @@ namespace Shows4AllMicaela.Pages.serie
 {
     public class EditModel : PageModel
     {
-        private readonly Shows4AllMicaela.Data.Context.Shows4AllContext _context;
+        private readonly Shows4AllContext _context;
 
-        public EditModel(Shows4AllMicaela.Data.Context.Shows4AllContext context)
+        public EditModel (Shows4AllContext context)
         {
             _context = context;
         }

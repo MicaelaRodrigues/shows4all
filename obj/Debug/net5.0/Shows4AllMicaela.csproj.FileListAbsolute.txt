@@ -461,3 +461,4 @@ C:\Users\Formando\source\repos\shows4all\obj\Debug\net5.0\Razor\Pages\SearchByAc
 C:\Users\Formando\source\repos\shows4all\obj\Debug\net5.0\Razor\Pages\RentedSeries.cshtml.g.cs
 C:\Users\Formando\source\repos\shows4all\obj\Debug\net5.0\Razor\Pages\SearchSeriesForRent.cshtml.g.cs
 C:\Users\Formando\source\repos\shows4all\obj\Debug\net5.0\Razor\Pages\TopSeriesByRating.cshtml.g.cs
+C:\Users\Formando\source\repos\shows4all\obj\Debug\net5.0\Razor\Pages\TopSeriesByGenre.cshtml.g.cs

@@ -25,7 +25,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Serie.SerieType" class="control-label"></label>
-                <input asp-for="Serie.SerieType" class="form-control" />
+                <select asp-for="Serie.SerieType" asp-items="ViewBag.SerieType" class="form-control"></select>
                 <span asp-validation-for="Serie.SerieType" class="text-danger"></span>
             </div>
             <div class="form-group">

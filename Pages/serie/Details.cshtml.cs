@@ -30,6 +30,8 @@ namespace Shows4AllMicaela.Pages.serie
         public Rental Rental { get; set; }
         public double RatingAverage { get; set; }
 
+       
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -49,7 +51,7 @@ namespace Shows4AllMicaela.Pages.serie
                 from serie in _context.Series
                 join rating in _context.Ratings
                 on serie.Id equals rating.IdSerie // origina uma nova tabela com todas as colunas com todas os id's series
-                where serie.Id == id 
+                where serie.Id == id
                 select rating
             ).Average(r => r.Stars);
 
@@ -59,34 +61,45 @@ namespace Shows4AllMicaela.Pages.serie
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
-            //Nao tenho user logado. Apenas para testar a gravaçao das stars no user.
             Rating.IdSerie = Serie.Id;
-            Rating.IdUser = 1;
+            Rating.IdUser = _context.LoggedUser.Id;
 
-            Serie = await _context.Series
-                .FirstOrDefaultAsync(m => m.Id == Serie.Id);
-
-            Rental = new Rental { 
-                Price = Serie.Price,
-                Date = DateTime.Now,
-                IdSerie = Serie.Id,
-                IdUser = 1
-            };
-
-            _context.Rentals.Add(Rental);
+            _context.Ratings.Add(Rating);
             await _context.SaveChangesAsync();
-
 
             return RedirectToPage("./Index");
 
         }
 
-         
+        public async Task<IActionResult> OnPostCheckButtonClickedAsync(int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToPage("./Index");
+            }
+
+            var IdSerie = id;
+            var IdUser = _context.LoggedUser.Id;
+
+
+            Serie = await _context
+                .Series
+                .FirstOrDefaultAsync(m => m.Id == Serie.Id);
+
+            Rental = new Rental
+            {
+                Price = Serie.Price,
+                Date = DateTime.Now,
+                IdSerie = Serie.Id,
+                IdUser = IdUser,
+            };
+
+            _context.Rentals.Add(Rental);
+            await _context.SaveChangesAsync();
+
+            return RedirectToPage("./Index");
+        }
+
 
     }
 

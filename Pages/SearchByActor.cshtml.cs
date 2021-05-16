@@ -46,17 +46,6 @@ namespace Shows4AllMicaela.Pages
                 select episode
             ).ToList();
 
-            
-
-
-
-
-
-
-
-
-
-
         }
     }
 }

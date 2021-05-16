@@ -12,9 +12,9 @@ namespace Shows4AllMicaela.Pages.user
 {
     public class DetailsModel : PageModel
     {
-        private readonly Shows4AllMicaela.Data.Context.Shows4AllContext _context;
+        private readonly Shows4AllContext _context;
 
-        public DetailsModel(Shows4AllMicaela.Data.Context.Shows4AllContext context)
+        public DetailsModel(Shows4AllContext context)
         {
             _context = context;
         }

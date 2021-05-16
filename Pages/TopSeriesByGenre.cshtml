@@ -1,0 +1,84 @@
+﻿@page
+@model Shows4AllMicaela.Pages.TopSeriesByGenreModel
+@{
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+
+            <div class="form-group">
+                <label asp-for="SearchGenre" class="control-label"></label>
+                <input asp-for="SearchGenre" class="form-control" />
+                <span asp-validation-for="SearchGenre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Genre" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+<hr />
+
+
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Title
+            </th>
+            <th>
+                Rating
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.SerieByGenres == null) return;
+        @foreach (var item in Model.SerieByGenres)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SerieTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Stars)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+
+
+
+
+@*@if (Model.SerieByGenres != null)
+    {
+        <ul>
+            @foreach (var serie in Model.SerieByGenres)
+            {
+                <li>
+                    @serie.SerieTitle
+
+                </li>
+                <li>
+                    @serie.Stars
+
+                </li>
+
+            }
+
+        </ul>
+    }*@

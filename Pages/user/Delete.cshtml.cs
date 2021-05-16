@@ -7,16 +7,17 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Shows4AllMicaela.Data;
 using Shows4AllMicaela.Data.Context;
+using Shows4AllMicaela.Data.Repositories;
 
 namespace Shows4AllMicaela.Pages.user
 {
     public class DeleteModel : PageModel
     {
-        private readonly Shows4AllMicaela.Data.Context.Shows4AllContext _context;
+        private readonly UserRepository _userRepository;
 
-        public DeleteModel(Shows4AllMicaela.Data.Context.Shows4AllContext context)
+        public DeleteModel(UserRepository userRepository)
         {
-            _context = context;
+            _userRepository = userRepository;
         }
 
         [BindProperty]
@@ -29,7 +30,7 @@ namespace Shows4AllMicaela.Pages.user
                 return NotFound();
             }
 
-            User = await _context.Users.FirstOrDefaultAsync(m => m.Id == id);
+            User = await _userRepository.GetAsync(id.Value);
 
             if (User == null)
             {
@@ -45,13 +46,7 @@ namespace Shows4AllMicaela.Pages.user
                 return NotFound();
             }
 
-            User = await _context.Users.FindAsync(id);
-
-            if (User != null)
-            {
-                _context.Users.Remove(User);
-                await _context.SaveChangesAsync();
-            }
+            _ = await _userRepository.DeleteUserAsync(id.Value);
 
             return RedirectToPage("./Index");
         }

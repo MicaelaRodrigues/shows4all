@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -12,16 +9,34 @@ namespace Shows4AllMicaela.Pages.serie
 {
     public class CreateModel : PageModel
     {
-        private readonly Shows4AllMicaela.Data.Context.Shows4AllContext _context;
+        private readonly Shows4AllContext _context;
 
-        public CreateModel(Shows4AllMicaela.Data.Context.Shows4AllContext context)
+        public CreateModel(Shows4AllContext context)
         {
             _context = context;
         }
 
+
         public IActionResult OnGet()
         {
-        ViewData["IdSeason"] = new SelectList(_context.Seasons, "Id", "Id");
+            ViewData["SerieType"] = new SelectList(new object[]
+            {
+                new {Name = "Comedy", Value = "Comedy"},
+                new {Name = "Horror", Value = "Horror"},
+                new {Name = "Terror", Value = "Terror"},
+                new {Name = "Action", Value = "Action"},
+                new {Name = "Thriller", Value = "Thriller"},
+                new {Name = "Romance", Value = "Romance"},
+                new {Name = "Drama", Value = "Drama"},
+                new {Name = "ScienceFiction", Value = "ScienceFiction"},
+                new {Name = "Mistery", Value = "Mistery"},
+                new {Name = "Adventure", Value = "Adventure"},
+                new {Name = "Crime", Value = "Crime"},
+                new {Name = "Suspense", Value = "Suspense"},
+            }, "Value", "Name");
+
+           ViewData["IdSeason"] = new SelectList(_context.Seasons, "Id", "Id");
+
             return Page();
         }
 

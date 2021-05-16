@@ -7,20 +7,28 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Shows4AllMicaela.Data;
 using Shows4AllMicaela.Data.Context;
+using Shows4AllMicaela.Data.Repositories;
 
 namespace Shows4AllMicaela.Pages.user
 {
     public class CreateModel : PageModel
     {
-        private readonly Shows4AllMicaela.Data.Context.Shows4AllContext _context;
+        private readonly UserRepository _userRepository;
 
-        public CreateModel(Shows4AllMicaela.Data.Context.Shows4AllContext context)
+        public CreateModel(UserRepository repository)
         {
-            _context = context;
+            _userRepository = repository;
         }
 
         public IActionResult OnGet()
         {
+
+            ViewData["UserType"] = new SelectList(new object[]
+            {
+                new {Name = "Administrator", Value = "Administrator"},
+                new {Name = "Client", Value = "Client"}
+            }, "Value", "Name");
+
             return Page();
         }
 
@@ -35,10 +43,7 @@ namespace Shows4AllMicaela.Pages.user
                 return Page();
             }
 
-            
-
-            _context.Users.Add(User);
-            await _context.SaveChangesAsync();
+            await _userRepository.AddUserAsync(User);          
 
             return RedirectToPage("./Index");
         }

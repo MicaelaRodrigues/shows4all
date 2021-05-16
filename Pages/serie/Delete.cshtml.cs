@@ -12,9 +12,9 @@ namespace Shows4AllMicaela.Pages.serie
 {
     public class DeleteModel : PageModel
     {
-        private readonly Shows4AllMicaela.Data.Context.Shows4AllContext _context;
+        private readonly Shows4AllContext _context;
 
-        public DeleteModel(Shows4AllMicaela.Data.Context.Shows4AllContext context)
+        public DeleteModel(Shows4AllContext context)
         {
             _context = context;
         }

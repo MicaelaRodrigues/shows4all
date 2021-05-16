@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Shows4AllMicaela.Data.Context;
 
 namespace Shows4AllMicaela.Migrations
 {
     [DbContext(typeof(Shows4AllContext))]
-    partial class Shows4AllContextModelSnapshot : ModelSnapshot
+    [Migration("20210511162219_updateGenreType")]
+    partial class updateGenreType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

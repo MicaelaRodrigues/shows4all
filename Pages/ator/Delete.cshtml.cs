@@ -1,22 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
 using Shows4AllMicaela.Data;
-using Shows4AllMicaela.Data.Context;
+using Shows4AllMicaela.Data.Repositories;
 
 namespace Shows4AllMicaela.Pages.ator
 {
     public class DeleteModel : PageModel
     {
-        private readonly Shows4AllMicaela.Data.Context.Shows4AllContext _context;
+        private readonly AtorRepository _actorRepository;
 
-        public DeleteModel(Shows4AllMicaela.Data.Context.Shows4AllContext context)
+        public DeleteModel(AtorRepository actorRepository)
         {
-            _context = context;
+            _actorRepository = actorRepository;
         }
 
         [BindProperty]
@@ -29,7 +25,7 @@ namespace Shows4AllMicaela.Pages.ator
                 return NotFound();
             }
 
-            Actor = await _context.Actors.FirstOrDefaultAsync(m => m.Id == id);
+            Actor = await _actorRepository.GetAsync(id.Value);
 
             if (Actor == null)
             {
@@ -45,15 +41,10 @@ namespace Shows4AllMicaela.Pages.ator
                 return NotFound();
             }
 
-            Actor = await _context.Actors.FindAsync(id);
-
-            if (Actor != null)
-            {
-                _context.Actors.Remove(Actor);
-                await _context.SaveChangesAsync();
-            }
+            _ = await _actorRepository.DeleteActorAsync(id.Value);
 
             return RedirectToPage("./Index");
         }
+
     }
 }

@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Shows4AllMicaela.Data.Context;
+using Shows4AllMicaela.Data.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,8 +29,18 @@ namespace Shows4AllMicaela
             var connectionString = Configuration.GetConnectionString("Shows4AllConnection");
 
             services.AddDbContext<Shows4AllContext>(options => options.UseSqlServer(connectionString));
-            
+
+            services.AddScoped<UserRepository>();
+            services.AddScoped<AtorRepository>();
+            services.AddScoped<EpisodeRepository>();
+            services.AddScoped<EpisodeActorRepository>();
+            services.AddScoped<SeasonRepository>();
+
             services.AddRazorPages();
+
+
+            services.AddRazorPages();
+
 
         }
 

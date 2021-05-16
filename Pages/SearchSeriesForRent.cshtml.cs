@@ -31,11 +31,10 @@ namespace Shows4AllMicaela.Pages
 
         //7*
         public void OnPost()
+        
+        
         {
-            var search = SerieForRent;
-
-            _ctx.Series.Where(u => u.Title.Contains(SerieForRent.ToLower())).ToList();
-
+            Series = _ctx.Series.Where(u => u.Title.ToLower().Contains(SerieForRent.ToLower())).ToList();
         }
 
     }

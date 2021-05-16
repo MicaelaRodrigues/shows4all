@@ -18,7 +18,7 @@ namespace Shows4AllMicaela.Data.Context
         {
             get
             {
-                return Users.FirstOrDefault(u => u.Id == 1);
+                return Users.FirstOrDefault(u => u.Id == 4);
             }
 
             set { }

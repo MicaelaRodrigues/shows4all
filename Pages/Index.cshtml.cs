@@ -26,6 +26,8 @@ namespace Shows4AllMicaela.Pages
         public Episode EpisodeModel { get; set; }
         public Rental RentalModel { get; set; }
 
+        public Rating RatingModel { get; set; }
+
         public void OnGet()
         {
 
@@ -37,8 +39,8 @@ namespace Shows4AllMicaela.Pages
             //UserModel = new User { Name = name, Country = country };
             //_ctx.Users.Add(UserModel);
 
-            //RentalModel = new Rental { Price = 10, Date = DateTime.Now, IdSerie = 3, IdUser = 3, };
-            //_ctx.Rentals.Add(RentalModel);
+            //RatingModel = new Rating { IdSerie = 7, IdUser = _ctx.LoggedUser.Id, Stars = 3, };
+            //_ctx.Ratings.Add(RatingModel);
             //_ctx.SaveChanges();
 
             //var episode = new Episde ()

@@ -1,22 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Shows4AllMicaela.Data;
-using Shows4AllMicaela.Data.Context;
+using Shows4AllMicaela.Data.Repositories;
 
 namespace Shows4AllMicaela.Pages.ator
 {
     public class CreateModel : PageModel
     {
-        private readonly Shows4AllMicaela.Data.Context.Shows4AllContext _context;
+        private readonly AtorRepository _actorRepository;
 
-        public CreateModel(Shows4AllMicaela.Data.Context.Shows4AllContext context)
+        public CreateModel(AtorRepository actorRepository)
         {
-            _context = context;
+            _actorRepository = actorRepository;
         }
 
         public IActionResult OnGet()
@@ -35,10 +31,10 @@ namespace Shows4AllMicaela.Pages.ator
                 return Page();
             }
 
-            _context.Actors.Add(Actor);
-            await _context.SaveChangesAsync();
+            await _actorRepository.AddActorAsync(Actor);
 
             return RedirectToPage("./Index");
         }
+
     }
 }
